@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<select id="mySelect" onchange="do_something()">
+    <option value="audi">audi</option>
+    <option value="bmw">bmw</option>
+    <option value="mercerdes">mer</option>
+    <option value="volov">vl</option>
+</select>
+</body>
+</html>
+<script>
+// <!--Sự kiện onchange : bắt sự kiện khi có thay đổi từ người dùng-->
+//    Cách dùng 1 thuộc tính onchange
+    function do_something() {
+        var selectedValue = document.getElementById("mySelect").value;
+        alert(selectedValue);
+    }
+//    Cách 2 dùng hàm addEvenListener
+    var selectedElement = document.getElementById("mySelect");
+    selectedElement.addEventListener("change",changeFunction );
+    function changeFunction() {
+        var selectValue = document.getElementById("mySelect").value;
+        alert(selectValue);
+    }
+
+</script>
