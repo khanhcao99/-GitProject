@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tổng hợp</title>
+</head>
+<body>
+<form action="" method="get">
+<!--    Tính điểm trung bình-->
+    <table><br>
+        <tr>
+            <th colspan="7">BÀI TẬP TÍNH ĐIỂM TRUNG BÌNH CỦA HỌC SINH</th>
+            <br>
+
+        </tr>
+        <tr>
+            <th>Điểm Lý</th>
+            <th>Điểm Hóa</th>
+            <th>Điểm Sinh</th>
+            <th>Tổng Điểm</th>
+            <th>Điểm Trung Bình</th>
+
+        </tr>
+        <tr>
+            <th><input id="ly" type="text"></th>
+            <th><input id="hoa" type="text"></th>
+            <th><input id="sinh" type="text"></th>
+            <th><input id="diemtong" type="text" readonly></th>
+            <th><input id="diemtb" type="text" readonly></th>
+            <td><input onclick="tinh()" type="button" value="Tính"></td>
+            <td><input  type="reset" value="Đặt Lại"></td>
+        </tr>
+    </table>
+    <br><br>
+<!--    Chuyển đổi nhiệt độ-->
+</form>
+<form action="">
+    <table>
+        <tr>
+            <th colspan="4">BÀI TẬP CHUYỂN ĐỔI NHIỆT ĐỘ</th>
+        </tr>
+        <tr>
+            <th>Độ C</th>
+            <th>Độ F</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th><input id="doC" type="text"></th>
+            <th><input id="doF" type="text" readonly></th>
+            <th><input onclick="doinhietdo()" type="button" value="Chuyển Đổi"></th>
+            <th><input type="reset" value="Đặt Lại"></th>
+        </tr>
+    </table>
+    <br><br>
+</form>
+<!--    Tính diện tích, chu vi hình tròn-->
+<form action="">
+    <table>
+        <tr>
+            <th colspan="6">TÍNH DIỆN TÍCH, CHU VI HÌNH TRÒN</th>
+        </tr>
+        <tr>
+            <th>Bán Kính</th>
+            <th>Đường Kính</th>
+            <th>Chu Vi</th>
+            <th>Diện Tích</th>
+        </tr>
+        <tr>
+            <th><input id="bankinh" type="text"></th>
+            <th><input id="duongkinh" type="text"></th>
+            <th><input id="chuvi" type="text" readonly></th>
+            <th><input id="dientich" type="text" readonly></th>
+            <th><input onclick="hinhtron()" type="button" value="Tính"></th>
+            <th><input type="reset" value="Đặt Lại"></th>
+
+        </tr>
+    </table>
+</form>
+</body>
+<script>
+    // Tính điểm trung bình và điểm tổng
+    function tinh() {
+        let ly = document.getElementById("ly").value;
+        let hoa = document.getElementById("hoa").value;
+        let sinh = document.getElementById("sinh").value;
+        let sum = parseInt(ly) + parseInt(hoa) +parseInt(sinh)
+        let result = ((parseInt(ly)+parseInt(hoa)+parseInt(sinh))/3);
+        document.getElementById("diemtong").value = sum;
+        document.getElementById("diemtb").value = result.toFixed(2);
+    }
+    // Chuyển đổi độ C sang độ F
+    function doinhietdo() {
+        let doc = document.getElementById("doC").value;
+        let dof = (((9/5)*parseInt(doc))+32);
+        document.getElementById("doF").value = dof;
+    }
+    // Tính diện tích và chu vi hình tròn
+    function hinhtron() {
+        let bk = document.getElementById("bankinh").value;
+        let dk = document.getElementById("duongkinh").value;
+        let chuvi = (bk+bk)*3.14;
+        let dtich = (bk*2)*3.14;
+        document.getElementById("chuvi").value = chuvi;
+        document.getElementById("dientich").value = dtich;
+    }
+</script>
+</html>
