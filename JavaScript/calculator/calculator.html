@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+</head>
+<body>
+<h1>Calculator</h1>
+<table>
+    <tr>
+        <th colspan="2"><input type="text" size="30" id="val1"></th>
+        <th colspan="2"><input type="text" size="30" id="val2"></th>
+    </tr>
+    <tr>
+        <td>
+            <button id="plus">Addition (+)</button>
+        </td>
+        <td>
+            <button id="minus"> Substraction (-)</button>
+        </td>
+        <td>
+            <button id="nhan"> Multiplication (*)</button>
+        </td>
+        <td>
+            <button id="chia">Division (/)</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p id="result"></p>
+        </td>
+    </tr>
+</table>
+
+</body>
+<script>
+    let val1 = document.getElementById('val1')
+    let val2 = document.getElementById('val2')
+    document.getElementById('plus').onclick = function () {
+        plus()
+    }
+
+    function plus() {
+
+        // document.getElementById("result").innerHTML = Number(val1.value) + Number(val2.value) ;
+
+        document.getElementById("result").innerHTML = parseInt(val1.value) + parseInt(val2.value);
+
+    }
+
+    document.getElementById('minus').onclick = function () {
+        minus()
+    }
+
+    function minus() {
+
+        // document.getElementById("result").innerHTML = Number(val1.value) - Number(val2.value) ;
+        document.getElementById("result").innerHTML = parseInt(val1.value) - parseInt(val2.value);
+
+    }
+
+    document.getElementById('nhan').onclick = function () {
+        nhan()
+    }
+
+    function nhan() {
+
+        // document.getElementById("result").innerHTML = Number(val1.value) * Number(val2.value) ;
+        document.getElementById("result").innerHTML = parseInt(val1.value) *  parseInt(val2.value);
+    }
+
+    document.getElementById('chia').onclick = function () {
+        chia()
+    }
+
+    function chia() {
+
+        // document.getElementById("result").innerHTML = Number(val1.value) / Number(val2.value) ;
+        document.getElementById("result").innerHTML = (parseInt(val1.value) / parseInt(val2.value));
+    }
+</script>
+</html>
